@@ -1,0 +1,4 @@
+*.o
+ctrl-c-uintr-test
+tty_isig_latency
+tty_isig_freq

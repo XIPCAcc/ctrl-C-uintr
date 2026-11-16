@@ -4,7 +4,7 @@ CC      ?= gcc
 CFLAGS  := -O2 -g -Wall -muintr -mgeneral-regs-only
 LDLIBS  :=
 
-PROGS := ctrl-c-uintr-test tty_isig_latency
+PROGS := ctrl-c-uintr-test tty_isig_latency tty_isig_freq
 
 .PHONY: all clean
 
@@ -14,6 +14,9 @@ ctrl-c-uintr-test: ctrl-c-uintr-test.c
 	$(CC) $(CFLAGS) -o $@ $< $(LDLIBS)
 
 tty_isig_latency: tty_isig_latency.c uintr_common.h
+	$(CC) $(CFLAGS) -o $@ $< $(LDLIBS)
+
+tty_isig_freq: tty_isig_freq.c uintr_common.h
 	$(CC) $(CFLAGS) -o $@ $< $(LDLIBS)
 
 clean:
